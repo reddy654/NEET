@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { User } from "lucide-react";
 import {
@@ -16,6 +16,26 @@ interface ComingSoonViewProps {
 }
 
 export const ComingSoonView: React.FC<ComingSoonViewProps> = ({ onBack, userName }) => {
+  const [currentTime, setCurrentTime] = useState<string | null>(null);
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const istTime = new Intl.DateTimeFormat('en-IN', {
+        timeZone: 'Asia/Kolkata',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+      }).format(now);
+      setCurrentTime(istTime);
+    };
+
+    updateTime(); // Initial call
+    const timer = setInterval(updateTime, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
   // Generate random stars for the background
   const stars = useMemo(() => {
     return Array.from({ length: 30 }).map((_, i) => ({
@@ -71,17 +91,25 @@ export const ComingSoonView: React.FC<ComingSoonViewProps> = ({ onBack, userName
       </div>
 
       <div className="z-10 max-w-lg flex flex-col items-center space-y-10 animate-in fade-in zoom-in duration-1000 scale-90 md:scale-100">
-        {/* Main Heading - Zoomed Out (Smaller) */}
+        {/* Main Heading */}
         <div className="space-y-4">
           <h1 className="font-serif-elegant text-2xl md:text-3xl font-bold tracking-[0.2em] leading-[1.4] text-transparent bg-clip-text bg-gradient-to-b from-white via-purple-100 to-cyan-200 uppercase">
             Paper<br />Will Be<br />Available<br />Soon
           </h1>
         </div>
 
+        {/* Real-time IST Clock */}
+        <div className="flex flex-col items-center space-y-1">
+          <span className="text-[0.5rem] tracking-[0.5em] text-white/20 uppercase">Current Time (IST)</span>
+          <div className="font-headline text-2xl md:text-3xl font-light tracking-[0.2em] text-white/60 tabular-nums">
+            {currentTime || "00:00:00"}
+          </div>
+        </div>
+
         {/* Gradient Separator */}
         <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-purple-400/30 to-transparent" />
 
-        {/* Description - Zoomed Out (Smaller) */}
+        {/* Description */}
         <div className="space-y-2">
           <p className="font-body text-[0.6rem] md:text-[0.7rem] text-white/40 font-light tracking-[0.4em] leading-relaxed uppercase">
             A new chapter in focused study is being written.<br />
