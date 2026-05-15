@@ -1,12 +1,11 @@
-
 "use client";
 
 import React, { useState, useEffect } from 'react';
 import { LandingView } from "@/components/landing/LandingView";
 import { OnboardingView } from "@/components/onboarding/OnboardingView";
-import { DashboardView } from "@/components/dashboard/DashboardView";
+import { ComingSoonView } from "@/components/coming-soon/ComingSoonView";
 
-type AppStep = 'landing' | 'onboarding' | 'dashboard';
+type AppStep = 'landing' | 'onboarding' | 'coming-soon';
 
 export default function Home() {
   const [step, setStep] = useState<AppStep>('landing');
@@ -18,7 +17,7 @@ export default function Home() {
     const savedName = localStorage.getItem('neetflow_user_name');
     if (savedName) {
       setUserName(savedName);
-      setStep('dashboard');
+      setStep('coming-soon');
     }
   }, []);
 
@@ -27,7 +26,7 @@ export default function Home() {
   };
 
   const handleBack = () => {
-    if (step === 'dashboard') {
+    if (step === 'coming-soon') {
       setStep('onboarding');
     } else if (step === 'onboarding') {
       setStep('landing');
@@ -37,7 +36,7 @@ export default function Home() {
   const handleOnboardingComplete = (name: string) => {
     localStorage.setItem('neetflow_user_name', name);
     setUserName(name);
-    setStep('dashboard');
+    setStep('coming-soon');
   };
 
   // Prevent hydration mismatch
@@ -53,8 +52,8 @@ export default function Home() {
         <OnboardingView onComplete={handleOnboardingComplete} onBack={handleBack} />
       )}
       
-      {step === 'dashboard' && (
-        <DashboardView userName={userName} onBack={handleBack} />
+      {step === 'coming-soon' && (
+        <ComingSoonView onBack={handleBack} />
       )}
     </main>
   );
