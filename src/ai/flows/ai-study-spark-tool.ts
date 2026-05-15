@@ -40,10 +40,7 @@ Here's how to determine the subject for the pro-tip:
   No specific subject was preferred. Randomly choose one from Biology, Physics, or Chemistry for the pro-tip.
 {{/if}}
 
-Your output MUST be a JSON object conforming to the following schema. Ensure that 'subjectUsed' accurately reflects the subject for which the 'proTip' was generated.
-
-Output Schema:
-{{jsonSchema outputSchema}}
+Your output MUST be a JSON object. Ensure that 'subjectUsed' accurately reflects the subject for which the 'proTip' was generated.
 
 Example Output:
 {
