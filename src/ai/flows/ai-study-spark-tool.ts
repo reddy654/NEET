@@ -40,7 +40,7 @@ Here's how to determine the subject for the pro-tip:
   No specific subject was preferred. Randomly choose one from Biology, Physics, or Chemistry for the pro-tip.
 {{/if}}
 
-Ensure the pro-tip is scientifically accurate and formatted clearly.`,
+Ensure the pro-tip is scientifically accurate and formatted clearly as text.`,
 });
 
 const generateStudySparkFlow = ai.defineFlow(
@@ -51,6 +51,9 @@ const generateStudySparkFlow = ai.defineFlow(
   },
   async (input) => {
     const {output} = await prompt(input);
-    return output!;
+    if (!output) {
+      throw new Error('No output returned from Genkit prompt');
+    }
+    return output;
   }
 );

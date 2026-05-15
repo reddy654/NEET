@@ -2,6 +2,7 @@
 
 import React, { useMemo } from 'react';
 import { Button } from "@/components/ui/button";
+import { Instagram } from "lucide-react";
 
 interface ComingSoonViewProps {
   onBack: () => void;
@@ -19,6 +20,10 @@ export const ComingSoonView: React.FC<ComingSoonViewProps> = ({ onBack }) => {
       duration: `${Math.random() * 4 + 2}s`,
     }));
   }, []);
+
+  const handleGetInTouch = () => {
+    window.open('https://www.instagram.com/vidyacharan__reddy?igsh=MWMyb2ZrOXU5NW44Yg==', '_blank');
+  };
 
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center px-6 bg-[#0a0812] overflow-hidden text-center">
@@ -45,7 +50,7 @@ export const ComingSoonView: React.FC<ComingSoonViewProps> = ({ onBack }) => {
       <div className="z-10 max-w-xl flex flex-col items-center space-y-10 animate-in fade-in zoom-in duration-1000">
         {/* Main Heading */}
         <div className="space-y-4">
-          <h1 className="font-serif-elegant text-4xl md:text-6xl font-bold tracking-[0.15em] leading-[1.2] text-transparent bg-clip-text bg-gradient-to-b from-white via-purple-200 to-cyan-300 uppercase">
+          <h1 className="font-serif-elegant text-3xl md:text-5xl font-bold tracking-[0.15em] leading-[1.2] text-transparent bg-clip-text bg-gradient-to-b from-white via-purple-200 to-cyan-300 uppercase">
             Paper<br />Will Be<br />Available<br />Soon
           </h1>
         </div>
@@ -55,20 +60,27 @@ export const ComingSoonView: React.FC<ComingSoonViewProps> = ({ onBack }) => {
 
         {/* Description */}
         <div className="space-y-2">
-          <p className="font-body text-sm md:text-base text-white/50 font-light tracking-widest leading-relaxed">
+          <p className="font-body text-[0.7rem] md:text-xs text-white/50 font-light tracking-[0.3em] leading-relaxed uppercase">
             A new chapter in focused study is being written.<br />
             Stay tuned for something quietly extraordinary.
           </p>
         </div>
 
-        {/* Back Button */}
-        <div className="pt-8">
+        {/* Actions */}
+        <div className="pt-8 flex flex-col sm:flex-row gap-4">
           <Button 
             onClick={onBack}
             variant="ghost"
             className="h-12 px-10 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white/60 text-xs font-serif-elegant tracking-[0.3em] transition-all duration-500 group"
           >
             <span className="mr-3 transition-transform group-hover:-translate-x-1">←</span> BACK
+          </Button>
+          
+          <Button 
+            onClick={handleGetInTouch}
+            className="h-12 px-10 rounded-full bg-primary text-primary-foreground text-xs font-serif-elegant tracking-[0.3em] transition-all duration-500 hover:scale-105 shadow-[0_0_20px_rgba(var(--primary),0.3)] gap-3"
+          >
+            GET IN TOUCH <Instagram className="w-4 h-4" />
           </Button>
         </div>
       </div>
