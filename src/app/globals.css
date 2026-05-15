@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 252 20% 8%;
+    --background: 252 20% 4%;
     --foreground: 0 0% 100%;
-    --card: 252 20% 12%;
+    --card: 252 20% 8%;
     --card-foreground: 0 0% 100%;
-    --popover: 252 20% 8%;
+    --popover: 252 20% 4%;
     --popover-foreground: 0 0% 100%;
-    --primary: 253 100% 68%;
+    --primary: 199 100% 60%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 252 20% 16%;
+    --secondary: 252 20% 12%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 252 10% 20%;
+    --muted: 252 10% 15%;
     --muted-foreground: 252 10% 70%;
-    --accent: 227 100% 73%;
+    --accent: 253 100% 68%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 252 20% 20%;
-    --input: 252 20% 20%;
-    --ring: 253 100% 68%;
+    --border: 252 20% 15%;
+    --input: 252 20% 15%;
+    --ring: 199 100% 60%;
     --radius: 1rem;
   }
 }
@@ -36,27 +36,48 @@
   }
 }
 
+.font-serif-elegant {
+  font-family: 'Cinzel', serif;
+}
+
 .glass-card {
   @apply bg-card/40 backdrop-blur-xl border border-white/10 shadow-2xl;
 }
 
-.glow-input:focus {
-  @apply ring-2 ring-primary/50 shadow-[0_0_20px_rgba(124,92,255,0.4)];
+.glow-button {
+  @apply relative transition-all duration-500 overflow-hidden;
+  background: linear-gradient(135deg, #a78bfa 0%, #22d3ee 100%);
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.4);
 }
 
-.text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-br from-white via-primary to-accent;
+.glow-button:hover {
+  @apply scale-105;
+  box-shadow: 0 0 50px rgba(167, 139, 250, 0.6);
 }
 
-.subject-card {
-  @apply relative overflow-hidden transition-all duration-500 hover:scale-110 hover:-translate-y-4;
+.text-gradient-white {
+  background: linear-gradient(to bottom, #ffffff 0%, #e0e7ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.subject-card::before {
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.2); }
+}
+
+.star {
+  @apply absolute rounded-full bg-white/40;
+  animation: twinkle var(--duration, 3s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.book-card {
+  @apply h-14 w-64 md:w-80 flex items-center justify-center rounded-xl shadow-2xl font-serif-elegant tracking-[0.3em] text-white/90 text-sm transition-all duration-500;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.book-card::before {
   content: '';
-  @apply absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 transition-opacity duration-500;
-}
-
-.subject-card:hover::before {
-  @apply opacity-100;
+  @apply absolute left-4 w-1.5 h-6 bg-white/20 rounded-full blur-[1px];
 }
