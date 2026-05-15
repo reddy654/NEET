@@ -42,20 +42,20 @@ export const ComingSoonView: React.FC<ComingSoonViewProps> = ({ onBack }) => {
         ))}
       </div>
 
-      <div className="z-10 max-w-2xl flex flex-col items-center space-y-12 animate-in fade-in zoom-in duration-1000">
+      <div className="z-10 max-w-xl flex flex-col items-center space-y-10 animate-in fade-in zoom-in duration-1000">
         {/* Main Heading */}
         <div className="space-y-4">
-          <h1 className="font-serif-elegant text-6xl md:text-8xl font-bold tracking-[0.15em] leading-[1.1] text-transparent bg-clip-text bg-gradient-to-b from-white via-purple-200 to-cyan-300 uppercase">
+          <h1 className="font-serif-elegant text-4xl md:text-6xl font-bold tracking-[0.15em] leading-[1.2] text-transparent bg-clip-text bg-gradient-to-b from-white via-purple-200 to-cyan-300 uppercase">
             Paper<br />Will Be<br />Available<br />Soon
           </h1>
         </div>
 
         {/* Gradient Separator */}
-        <div className="w-48 h-[2px] bg-gradient-to-r from-transparent via-purple-400 to-transparent opacity-60" />
+        <div className="w-32 h-[1px] bg-gradient-to-r from-transparent via-purple-400 to-transparent opacity-40" />
 
         {/* Description */}
         <div className="space-y-2">
-          <p className="font-body text-lg md:text-xl text-white/60 font-light tracking-wide leading-relaxed">
+          <p className="font-body text-sm md:text-base text-white/50 font-light tracking-widest leading-relaxed">
             A new chapter in focused study is being written.<br />
             Stay tuned for something quietly extraordinary.
           </p>
@@ -66,7 +66,7 @@ export const ComingSoonView: React.FC<ComingSoonViewProps> = ({ onBack }) => {
           <Button 
             onClick={onBack}
             variant="ghost"
-            className="h-14 px-12 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white/80 font-serif-elegant tracking-[0.3em] transition-all duration-500 group"
+            className="h-12 px-10 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white/60 text-xs font-serif-elegant tracking-[0.3em] transition-all duration-500 group"
           >
             <span className="mr-3 transition-transform group-hover:-translate-x-1">←</span> BACK
           </Button>

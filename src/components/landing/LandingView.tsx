@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useMemo } from 'react';
@@ -16,14 +15,14 @@ export const LandingView: React.FC<LandingViewProps> = ({ onEnter }) => {
       id: i,
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
-      size: `${Math.random() * 3 + 1}px`,
+      size: `${Math.random() * 2 + 1}px`,
       delay: `${Math.random() * 5}s`,
       duration: `${Math.random() * 4 + 2}s`,
     }));
   }, []);
 
   return (
-    <div className="relative min-h-screen flex flex-col items-center justify-between py-24 px-6 bg-[#0a0812] overflow-hidden">
+    <div className="relative min-h-screen flex flex-col items-center justify-between py-32 px-6 bg-[#0a0812] overflow-hidden">
       {/* Background stars and atmospheric glows */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#1a152e]/50 rounded-full blur-[160px]" />
@@ -46,27 +45,27 @@ export const LandingView: React.FC<LandingViewProps> = ({ onEnter }) => {
 
       {/* Back Button (Placeholder for Landing) */}
       <div className="absolute top-8 left-8 z-20">
-        <Button variant="ghost" className="text-white/40 hover:text-white/100 hover:bg-white/5 gap-2" disabled>
+        <Button variant="ghost" className="text-white/20 hover:text-white/100 hover:bg-white/5 gap-2" disabled>
           <ArrowLeft className="w-4 h-4" />
           BACK
         </Button>
       </div>
 
       {/* Top Header */}
-      <div className="z-10 flex flex-col items-center space-y-2 animate-in fade-in slide-in-from-top-4 duration-1000">
-        <span className="font-body text-[0.65rem] tracking-[0.8em] text-white/50 uppercase">
+      <div className="z-10 flex flex-col items-center space-y-3 animate-in fade-in slide-in-from-top-4 duration-1000">
+        <span className="font-body text-[0.6rem] tracking-[0.8em] text-white/40 uppercase">
           A Study Companion
         </span>
-        <h1 className="font-serif-elegant text-8xl md:text-9xl font-bold tracking-[0.1em] text-gradient-white">
+        <h1 className="font-serif-elegant text-6xl md:text-7xl font-bold tracking-[0.1em] text-gradient-white">
           NEET
         </h1>
-        <span className="font-serif-elegant text-sm md:text-lg tracking-[1.2em] text-white/70 uppercase pt-2">
+        <span className="font-serif-elegant text-xs md:text-sm tracking-[1.2em] text-white/60 uppercase pt-1">
           Paper
         </span>
       </div>
 
       {/* Middle Section: Subject Stack */}
-      <div className="z-10 relative flex flex-col items-center -space-y-4 pt-12 animate-in fade-in zoom-in duration-1000 delay-300">
+      <div className="z-10 relative flex flex-col items-center -space-y-4 pt-12 animate-in fade-in zoom-in duration-1000 delay-300 scale-90 md:scale-100">
         <div className="book-card bg-rose-900/80 -rotate-[2deg] hover:-rotate-1 z-30 translate-x-2">
           Chemistry
         </div>
@@ -82,7 +81,7 @@ export const LandingView: React.FC<LandingViewProps> = ({ onEnter }) => {
       <div className="z-10 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500">
         <Button 
           onClick={onEnter}
-          className="glow-button h-16 w-64 md:w-72 rounded-full text-lg font-serif-elegant tracking-[0.5em] text-black font-bold"
+          className="glow-button h-14 w-60 md:w-64 rounded-full text-base font-serif-elegant tracking-[0.5em] text-black font-bold"
         >
           ENTER
         </Button>
