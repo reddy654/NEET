@@ -1,8 +1,9 @@
+
 "use client";
 
 import React, { useMemo } from 'react';
 import { Button } from "@/components/ui/button";
-import { Instagram } from "lucide-react";
+import { Instagram, ArrowLeft } from "lucide-react";
 
 interface ComingSoonViewProps {
   onBack: () => void;
@@ -15,7 +16,7 @@ export const ComingSoonView: React.FC<ComingSoonViewProps> = ({ onBack }) => {
       id: i,
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
-      size: `${Math.random() * 2 + 1}px`,
+      size: `${Math.random() * 2 + 0.5}px`,
       delay: `${Math.random() * 5}s`,
       duration: `${Math.random() * 4 + 2}s`,
     }));
@@ -29,8 +30,8 @@ export const ComingSoonView: React.FC<ComingSoonViewProps> = ({ onBack }) => {
     <div className="relative min-h-screen flex flex-col items-center justify-center px-6 bg-[#0a0812] overflow-hidden text-center">
       {/* Background stars and atmospheric glows */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-900/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-cyan-900/10 rounded-full blur-[120px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-900/5 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-cyan-900/5 rounded-full blur-[120px]" />
         {stars.map((star) => (
           <div
             key={star.id}
@@ -47,20 +48,20 @@ export const ComingSoonView: React.FC<ComingSoonViewProps> = ({ onBack }) => {
         ))}
       </div>
 
-      <div className="z-10 max-w-xl flex flex-col items-center space-y-10 animate-in fade-in zoom-in duration-1000">
-        {/* Main Heading */}
+      <div className="z-10 max-w-lg flex flex-col items-center space-y-10 animate-in fade-in zoom-in duration-1000 scale-90 md:scale-100">
+        {/* Main Heading - Zoomed Out (Smaller) */}
         <div className="space-y-4">
-          <h1 className="font-serif-elegant text-3xl md:text-5xl font-bold tracking-[0.15em] leading-[1.2] text-transparent bg-clip-text bg-gradient-to-b from-white via-purple-200 to-cyan-300 uppercase">
+          <h1 className="font-serif-elegant text-2xl md:text-3xl font-bold tracking-[0.2em] leading-[1.4] text-transparent bg-clip-text bg-gradient-to-b from-white via-purple-100 to-cyan-200 uppercase">
             Paper<br />Will Be<br />Available<br />Soon
           </h1>
         </div>
 
         {/* Gradient Separator */}
-        <div className="w-32 h-[1px] bg-gradient-to-r from-transparent via-purple-400 to-transparent opacity-40" />
+        <div className="w-24 h-[1px] bg-gradient-to-r from-transparent via-purple-400/30 to-transparent" />
 
-        {/* Description */}
+        {/* Description - Zoomed Out (Smaller) */}
         <div className="space-y-2">
-          <p className="font-body text-[0.7rem] md:text-xs text-white/50 font-light tracking-[0.3em] leading-relaxed uppercase">
+          <p className="font-body text-[0.6rem] md:text-[0.7rem] text-white/40 font-light tracking-[0.4em] leading-relaxed uppercase">
             A new chapter in focused study is being written.<br />
             Stay tuned for something quietly extraordinary.
           </p>
@@ -71,16 +72,16 @@ export const ComingSoonView: React.FC<ComingSoonViewProps> = ({ onBack }) => {
           <Button 
             onClick={onBack}
             variant="ghost"
-            className="h-12 px-10 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white/60 text-xs font-serif-elegant tracking-[0.3em] transition-all duration-500 group"
+            className="h-11 px-8 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 text-white/40 text-[0.6rem] font-serif-elegant tracking-[0.3em] transition-all duration-500 group"
           >
             <span className="mr-3 transition-transform group-hover:-translate-x-1">←</span> BACK
           </Button>
           
           <Button 
             onClick={handleGetInTouch}
-            className="h-12 px-10 rounded-full bg-primary text-primary-foreground text-xs font-serif-elegant tracking-[0.3em] transition-all duration-500 hover:scale-105 shadow-[0_0_20px_rgba(var(--primary),0.3)] gap-3"
+            className="h-11 px-8 rounded-full bg-primary text-primary-foreground text-[0.6rem] font-serif-elegant tracking-[0.3em] transition-all duration-500 hover:scale-105 shadow-[0_0_20px_rgba(var(--primary),0.2)] gap-2 uppercase"
           >
-            GET IN TOUCH <Instagram className="w-4 h-4" />
+            GET IN TOUCH <Instagram className="w-3.5 h-3.5" />
           </Button>
         </div>
       </div>

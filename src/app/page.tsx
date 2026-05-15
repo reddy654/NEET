@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -14,6 +15,7 @@ export default function Home() {
 
   useEffect(() => {
     setMounted(true);
+    // Persist session: if name exists, skip onboarding
     const savedName = localStorage.getItem('neetflow_user_name');
     if (savedName) {
       setUserName(savedName);
@@ -39,7 +41,7 @@ export default function Home() {
     setStep('coming-soon');
   };
 
-  // Prevent hydration mismatch
+  // Prevent hydration mismatch by only rendering after mount
   if (!mounted) return null;
 
   return (
