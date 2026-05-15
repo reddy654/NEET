@@ -1,16 +1,18 @@
+
 "use client";
 
 import React, { useEffect, useState } from 'react';
-import { Sparkles, BookOpen, Clock, Trophy, RefreshCcw } from "lucide-react";
+import { Sparkles, BookOpen, Clock, Trophy, RefreshCcw, ArrowLeft } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { generateStudySpark, type GenerateStudySparkOutput } from "@/ai/flows/ai-study-spark-tool";
 
 interface DashboardViewProps {
   userName: string;
+  onBack: () => void;
 }
 
-export const DashboardView: React.FC<DashboardViewProps> = ({ userName }) => {
+export const DashboardView: React.FC<DashboardViewProps> = ({ userName, onBack }) => {
   const [spark, setSpark] = useState<GenerateStudySparkOutput | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -31,7 +33,19 @@ export const DashboardView: React.FC<DashboardViewProps> = ({ userName }) => {
   }, []);
 
   return (
-    <div className="min-h-screen p-8 bg-[#121018] animate-in fade-in slide-in-from-bottom-8 duration-1000">
+    <div className="min-h-screen p-8 bg-[#121018] animate-in fade-in slide-in-from-bottom-8 duration-1000 relative">
+      {/* Back Button */}
+      <div className="absolute top-8 left-8 z-20">
+        <Button 
+          variant="ghost" 
+          onClick={onBack}
+          className="text-white/60 hover:text-white hover:bg-white/5 gap-2 font-headline tracking-widest text-xs"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          EXIT TO START
+        </Button>
+      </div>
+
       <div className="max-w-6xl mx-auto space-y-12">
         {/* Header Section */}
         <div className="text-center space-y-4 pt-12">

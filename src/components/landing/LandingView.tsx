@@ -1,7 +1,9 @@
+
 "use client";
 
 import React, { useMemo } from 'react';
 import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 
 interface LandingViewProps {
   onEnter: () => void;
@@ -40,6 +42,14 @@ export const LandingView: React.FC<LandingViewProps> = ({ onEnter }) => {
             } as React.CSSProperties}
           />
         ))}
+      </div>
+
+      {/* Back Button (Placeholder for Landing) */}
+      <div className="absolute top-8 left-8 z-20">
+        <Button variant="ghost" className="text-white/40 hover:text-white/100 hover:bg-white/5 gap-2" disabled>
+          <ArrowLeft className="w-4 h-4" />
+          BACK
+        </Button>
       </div>
 
       {/* Top Header */}

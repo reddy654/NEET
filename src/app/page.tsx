@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -25,6 +26,14 @@ export default function Home() {
     setStep('onboarding');
   };
 
+  const handleBack = () => {
+    if (step === 'dashboard') {
+      setStep('onboarding');
+    } else if (step === 'onboarding') {
+      setStep('landing');
+    }
+  };
+
   const handleOnboardingComplete = (name: string) => {
     localStorage.setItem('neetflow_user_name', name);
     setUserName(name);
@@ -41,11 +50,11 @@ export default function Home() {
       )}
       
       {step === 'onboarding' && (
-        <OnboardingView onComplete={handleOnboardingComplete} />
+        <OnboardingView onComplete={handleOnboardingComplete} onBack={handleBack} />
       )}
       
       {step === 'dashboard' && (
-        <DashboardView userName={userName} />
+        <DashboardView userName={userName} onBack={handleBack} />
       )}
     </main>
   );

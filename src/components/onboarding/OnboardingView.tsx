@@ -1,18 +1,33 @@
+
 "use client";
 
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { ArrowLeft } from "lucide-react";
 
 interface OnboardingViewProps {
   onComplete: (name: string) => void;
+  onBack: () => void;
 }
 
-export const OnboardingView: React.FC<OnboardingViewProps> = ({ onComplete }) => {
+export const OnboardingView: React.FC<OnboardingViewProps> = ({ onComplete, onBack }) => {
   const [name, setName] = useState("");
 
   return (
     <div className="min-h-screen flex items-center justify-center p-6 bg-[#121018] animate-in fade-in zoom-in duration-700">
+      {/* Back Button */}
+      <div className="absolute top-8 left-8 z-20">
+        <Button 
+          variant="ghost" 
+          onClick={onBack}
+          className="text-white/60 hover:text-white hover:bg-white/5 gap-2 font-headline tracking-widest text-xs"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          BACK
+        </Button>
+      </div>
+
       <div className="w-full max-w-md glass-card rounded-[2.5rem] p-12 text-center relative overflow-hidden">
         {/* Glow Effect */}
         <div className="absolute -top-24 -left-24 w-48 h-48 bg-primary/20 rounded-full blur-3xl" />
