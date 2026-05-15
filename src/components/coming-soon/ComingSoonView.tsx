@@ -3,13 +3,19 @@
 
 import React, { useMemo } from 'react';
 import { Button } from "@/components/ui/button";
-import { Instagram, ArrowLeft } from "lucide-react";
+import { Instagram, User } from "lucide-react";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 interface ComingSoonViewProps {
   onBack: () => void;
+  userName: string;
 }
 
-export const ComingSoonView: React.FC<ComingSoonViewProps> = ({ onBack }) => {
+export const ComingSoonView: React.FC<ComingSoonViewProps> = ({ onBack, userName }) => {
   // Generate random stars for the background
   const stars = useMemo(() => {
     return Array.from({ length: 30 }).map((_, i) => ({
@@ -46,6 +52,26 @@ export const ComingSoonView: React.FC<ComingSoonViewProps> = ({ onBack }) => {
             } as React.CSSProperties}
           />
         ))}
+      </div>
+
+      {/* Profile Logo - Top Right */}
+      <div className="absolute top-8 right-8 z-20">
+        <Popover>
+          <PopoverTrigger asChild>
+            <Button 
+              variant="ghost" 
+              className="w-10 h-10 rounded-full bg-white/5 border border-white/10 p-0 flex items-center justify-center hover:bg-white/10 transition-all duration-300"
+            >
+              <User className="w-5 h-5 text-white/60" />
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent className="bg-[#121018]/90 border-white/10 backdrop-blur-xl rounded-2xl w-auto py-3 px-5 shadow-2xl">
+            <div className="flex flex-col space-y-1">
+              <span className="text-[0.5rem] tracking-[0.3em] text-white/30 uppercase font-serif-elegant">Logged in as</span>
+              <span className="text-sm font-headline font-bold text-white/90 tracking-wider uppercase">{userName}</span>
+            </div>
+          </PopoverContent>
+        </Popover>
       </div>
 
       <div className="z-10 max-w-lg flex flex-col items-center space-y-10 animate-in fade-in zoom-in duration-1000 scale-90 md:scale-100">

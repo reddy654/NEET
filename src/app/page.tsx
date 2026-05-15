@@ -55,7 +55,7 @@ export default function Home() {
       )}
       
       {step === 'coming-soon' && (
-        <ComingSoonView onBack={handleBack} />
+        <ComingSoonView onBack={handleBack} userName={userName} />
       )}
     </main>
   );
