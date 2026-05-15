@@ -26,7 +26,7 @@ export const ComingSoonView: React.FC<ComingSoonViewProps> = ({ onBack, userName
         hour: '2-digit',
         minute: '2-digit',
         second: '2-digit',
-        hour12: false,
+        hour12: true,
       }).format(now);
       setCurrentTime(istTime);
     };
@@ -101,8 +101,8 @@ export const ComingSoonView: React.FC<ComingSoonViewProps> = ({ onBack, userName
         {/* Real-time IST Clock */}
         <div className="flex flex-col items-center space-y-1">
           <span className="text-[0.5rem] tracking-[0.5em] text-white/20 uppercase">Current Time (IST)</span>
-          <div className="font-headline text-2xl md:text-3xl font-light tracking-[0.2em] text-white/60 tabular-nums">
-            {currentTime || "00:00:00"}
+          <div className="font-headline text-2xl md:text-3xl font-light tracking-[0.2em] text-white/60 tabular-nums uppercase">
+            {currentTime || "00:00:00 AM"}
           </div>
         </div>
 
