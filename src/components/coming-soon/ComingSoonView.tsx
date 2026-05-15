@@ -3,7 +3,7 @@
 
 import React, { useMemo } from 'react';
 import { Button } from "@/components/ui/button";
-import { Instagram, User } from "lucide-react";
+import { User } from "lucide-react";
 import {
   Popover,
   PopoverContent,
@@ -27,10 +27,6 @@ export const ComingSoonView: React.FC<ComingSoonViewProps> = ({ onBack, userName
       duration: `${Math.random() * 4 + 2}s`,
     }));
   }, []);
-
-  const handleGetInTouch = () => {
-    window.open('https://www.instagram.com/vidyacharan__reddy?igsh=MWMyb2ZrOXU5NW44Yg==', '_blank');
-  };
 
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center px-6 bg-[#0a0812] overflow-hidden text-center">
@@ -101,13 +97,6 @@ export const ComingSoonView: React.FC<ComingSoonViewProps> = ({ onBack, userName
             className="h-11 px-8 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 text-white/40 text-[0.6rem] font-serif-elegant tracking-[0.3em] transition-all duration-500 group"
           >
             <span className="mr-3 transition-transform group-hover:-translate-x-1">←</span> BACK
-          </Button>
-          
-          <Button 
-            onClick={handleGetInTouch}
-            className="h-11 px-8 rounded-full bg-primary text-primary-foreground text-[0.6rem] font-serif-elegant tracking-[0.3em] transition-all duration-500 hover:scale-105 shadow-[0_0_20px_rgba(var(--primary),0.2)] gap-2 uppercase"
-          >
-            GET IN TOUCH <Instagram className="w-3.5 h-3.5" />
           </Button>
         </div>
       </div>
