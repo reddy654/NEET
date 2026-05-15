@@ -40,15 +40,7 @@ Here's how to determine the subject for the pro-tip:
   No specific subject was preferred. Randomly choose one from Biology, Physics, or Chemistry for the pro-tip.
 {{/if}}
 
-Your output MUST be a JSON object. Ensure that 'subjectUsed' accurately reflects the subject for which the 'proTip' was generated.
-
-Example Output:
-{
-  "motivation": "Believe in yourself, NEET Champ! Every small step forward is a victory.",
-  "proTip": "Biology: Remember that active transport moves substances against their concentration gradient, requiring energy usually from ATP.",
-  "subjectUsed": "Biology"
-}
-`,
+Ensure the pro-tip is scientifically accurate and formatted clearly.`,
 });
 
 const generateStudySparkFlow = ai.defineFlow(
