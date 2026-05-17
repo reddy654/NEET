@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useMemo, useState, useEffect } from 'react';
@@ -87,6 +88,7 @@ export const ComingSoonView: React.FC<ComingSoonViewProps> = ({ onBack, userName
 
       <div className="z-10 max-w-md flex flex-col items-center space-y-6 animate-in fade-in zoom-in duration-1000 scale-[0.65] md:scale-[0.75]">
         <div className="space-y-2">
+          <span className="text-[0.4rem] tracking-[0.8em] text-white/30 uppercase">Welcome, {userName}</span>
           <h1 className="font-serif-elegant text-lg md:text-xl font-bold tracking-[0.2em] leading-[1.6] text-transparent bg-clip-text bg-gradient-to-b from-white via-purple-100 to-cyan-200 uppercase">
             Paper Will Be<br />Available Soon
           </h1>

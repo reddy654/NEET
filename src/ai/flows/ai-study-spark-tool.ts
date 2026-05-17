@@ -1,3 +1,4 @@
+
 'use server';
 /**
  * @fileOverview A Genkit flow for generating personalized motivational prompts and daily scientific pro-tips for NEET students.
@@ -35,7 +36,7 @@ Generate a personalized motivational prompt and a concise scientific pro-tip.
 
 Student preferred subject: {{{subject}}} (If empty, choose one of Biology, Physics, or Chemistry randomly).
 
-Ensure the pro-tip is scientifically accurate and formatted clearly as text.`,
+Ensure the pro-tip is scientifically accurate and formatted clearly as text. Do not include markdown or extra formatting.`,
 });
 
 const generateStudySparkFlow = ai.defineFlow(
