@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useMemo } from 'react';
@@ -42,18 +41,18 @@ export const LandingView: React.FC<LandingViewProps> = ({ onEnter }) => {
       </div>
 
       <div className="z-10 flex flex-col items-center space-y-2 animate-in fade-in slide-in-from-top-4 duration-1000">
-        <span className="font-body text-[0.35rem] md:text-[0.4rem] tracking-[0.8em] text-white/30 uppercase">
+        <span className="font-body text-[0.3rem] md:text-[0.35rem] tracking-[0.8em] text-white/30 uppercase">
           A Study Companion
         </span>
-        <h1 className="font-serif-elegant text-3xl md:text-4xl font-bold tracking-[0.2em] text-gradient-white">
+        <h1 className="font-serif-elegant text-2xl md:text-3xl font-bold tracking-[0.2em] text-gradient-white">
           NEET
         </h1>
-        <span className="font-serif-elegant text-[6px] md:text-[8px] tracking-[1.2em] text-white/50 uppercase pt-1">
+        <span className="font-serif-elegant text-[5px] md:text-[6px] tracking-[1.2em] text-white/50 uppercase pt-1">
           Paper
         </span>
       </div>
 
-      <div className="z-10 relative flex flex-col items-center -space-y-3 pt-8 animate-in fade-in zoom-in duration-1000 delay-300 scale-[0.65] md:scale-75">
+      <div className="z-10 relative flex flex-col items-center -space-y-3 pt-8 animate-in fade-in zoom-in duration-1000 delay-300 scale-[0.5] md:scale-[0.6]">
         <div className="book-card bg-rose-950/90 -rotate-[2deg] hover:-rotate-1 z-30 translate-x-2 animate-float">
           Chemistry
         </div>
@@ -65,10 +64,10 @@ export const LandingView: React.FC<LandingViewProps> = ({ onEnter }) => {
         </div>
       </div>
 
-      <div className="z-10 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500">
+      <div className="z-10 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-500 scale-90 md:scale-100">
         <Button 
           onClick={onEnter}
-          className="glow-button h-10 w-40 md:h-11 md:w-48 rounded-full text-[0.6rem] md:text-xs font-serif-elegant tracking-[0.4em] text-black font-bold uppercase"
+          className="glow-button h-9 w-36 md:h-10 md:w-44 rounded-full text-[0.55rem] md:text-[0.65rem] font-serif-elegant tracking-[0.4em] text-black font-bold uppercase"
         >
           ENTER
         </Button>

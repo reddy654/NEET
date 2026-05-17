@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useMemo, useState, useEffect } from 'react';
@@ -72,50 +71,50 @@ export const ComingSoonView: React.FC<ComingSoonViewProps> = ({ onBack, userName
           <PopoverTrigger asChild>
             <Button 
               variant="ghost" 
-              className="w-9 h-9 rounded-full bg-white/5 border border-white/10 p-0 flex items-center justify-center hover:bg-white/10 transition-all duration-300"
+              className="w-8 h-8 rounded-full bg-white/5 border border-white/10 p-0 flex items-center justify-center hover:bg-white/10 transition-all duration-300"
             >
-              <User className="w-4 h-4 text-white/60" />
+              <User className="w-3.5 h-3.5 text-white/60" />
             </Button>
           </PopoverTrigger>
           <PopoverContent className="bg-[#121018]/90 border-white/10 backdrop-blur-xl rounded-xl w-auto py-2 px-4 shadow-2xl">
             <div className="flex flex-col space-y-0.5">
-              <span className="text-[0.4rem] tracking-[0.3em] text-white/30 uppercase font-serif-elegant">Logged in as</span>
-              <span className="text-xs font-headline font-bold text-white/90 tracking-wider uppercase">{userName}</span>
+              <span className="text-[0.35rem] tracking-[0.3em] text-white/30 uppercase font-serif-elegant">Logged in as</span>
+              <span className="text-[0.6rem] font-headline font-bold text-white/90 tracking-wider uppercase">{userName}</span>
             </div>
           </PopoverContent>
         </Popover>
       </div>
 
-      <div className="z-10 max-w-md flex flex-col items-center space-y-8 animate-in fade-in zoom-in duration-1000 scale-[0.8] md:scale-90">
-        <div className="space-y-3">
-          <h1 className="font-serif-elegant text-xl md:text-2xl font-bold tracking-[0.2em] leading-[1.6] text-transparent bg-clip-text bg-gradient-to-b from-white via-purple-100 to-cyan-200 uppercase">
+      <div className="z-10 max-w-md flex flex-col items-center space-y-6 animate-in fade-in zoom-in duration-1000 scale-[0.65] md:scale-[0.75]">
+        <div className="space-y-2">
+          <h1 className="font-serif-elegant text-lg md:text-xl font-bold tracking-[0.2em] leading-[1.6] text-transparent bg-clip-text bg-gradient-to-b from-white via-purple-100 to-cyan-200 uppercase">
             Paper Will Be<br />Available Soon
           </h1>
         </div>
 
         <div className="flex flex-col items-center space-y-1">
-          <span className="text-[0.4rem] tracking-[0.5em] text-white/20 uppercase">Current Time (IST)</span>
-          <div className="font-headline text-xl md:text-2xl font-light tracking-[0.2em] text-white/60 tabular-nums uppercase">
+          <span className="text-[0.35rem] tracking-[0.5em] text-white/20 uppercase">Current Time (IST)</span>
+          <div className="font-headline text-lg md:text-xl font-light tracking-[0.2em] text-white/60 tabular-nums uppercase">
             {currentTime || "00:00:00 AM"}
           </div>
         </div>
 
-        <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-purple-400/20 to-transparent" />
+        <div className="w-12 h-[1px] bg-gradient-to-r from-transparent via-purple-400/20 to-transparent" />
 
-        <div className="space-y-2">
-          <p className="font-body text-[0.55rem] text-white/30 font-light tracking-[0.4em] leading-relaxed uppercase">
+        <div className="space-y-1.5">
+          <p className="font-body text-[0.45rem] text-white/30 font-light tracking-[0.4em] leading-relaxed uppercase">
             A new chapter in focused study is being written.<br />
             Stay tuned for something quietly extraordinary.
           </p>
         </div>
 
-        <div className="pt-4">
+        <div className="pt-2">
           <Button 
             onClick={onBack}
             variant="ghost"
-            className="h-10 px-8 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 text-white/40 text-[0.55rem] font-serif-elegant tracking-[0.3em] transition-all duration-500 group"
+            className="h-8 px-6 rounded-full bg-white/5 hover:bg-white/10 border border-white/5 text-white/40 text-[0.45rem] font-serif-elegant tracking-[0.3em] transition-all duration-500 group"
           >
-            <span className="mr-3 transition-transform group-hover:-translate-x-1">←</span> BACK
+            <span className="mr-2 transition-transform group-hover:-translate-x-1">←</span> BACK
           </Button>
         </div>
       </div>

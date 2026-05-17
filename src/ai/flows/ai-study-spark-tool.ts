@@ -1,4 +1,3 @@
-
 'use server';
 /**
  * @fileOverview A Genkit flow for generating personalized motivational prompts and daily scientific pro-tips for NEET students.
@@ -34,12 +33,7 @@ const prompt = ai.definePrompt({
   prompt: `You are an AI assistant designed to help NEET students stay focused and motivated.
 Generate a personalized motivational prompt and a concise scientific pro-tip.
 
-Subject Determination:
-{{#if subject}}
-  The student's preferred subject is: {{{subject}}}. Use this for the pro-tip.
-{{else}}
-  No specific subject was preferred. Randomly choose one from Biology, Physics, or Chemistry for the pro-tip.
-{{/if}}
+Student preferred subject: {{{subject}}} (If empty, choose one of Biology, Physics, or Chemistry randomly).
 
 Ensure the pro-tip is scientifically accurate and formatted clearly as text.`,
 });
